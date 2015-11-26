@@ -50,46 +50,31 @@ or die('Error connecting to MySQL server.');
                 if(!($stmt = mysqli_prepare($conn, $query))){
                     echo "it has failed preparation";
                 };
-                //            if(!$stmt->bind_param("ss", $state, $state)){
-                //                echo "failed to bind params";
-                //            };
                 if(!$stmt->execute()){
                     echo "execution failed";
                 }
 
                 $stmt->bind_result($col1);
-                //            print "<pre>";
-                $row = 1;
+                $row = 0;
                 echo "<tr>";
                 while($stmt->fetch()){
-                    if($row % 3 == 0 && $row != $stmt->num_rows){
+                    if($row % 3 == 0){
                         echo "</tr>";
                         echo "<tr>";
-                    } else if($row == $stmt->num_rows){
-                        echo "<td><img src='$col1' style='width: 300px; height: 300px;'></img></td>";
-                        echo "</tr>";
-                        break;
                     }
-//                    printf("%s\n", $col1);
+//                    else if($row == $stmt->num_rows){
+//                        echo "<td><img src='$col1' style='width: 300px; height: 300px;'></img></td>";
+//                        echo "</tr>";
+//                        break;
+//                    }
                     echo "<td><img src='$col1' style='width: 300px; height: 300px;'></img></td>";
                     $row++;
-
                 }
+                echo "</tr>";
                 $stmt->close();
-                //            print "</pre>";
                 mysqli_free_result($result);
                 mysqli_close($conn);
                 ?>
-<!--                <tr>-->
-<!--                    <td><img src="https://s3.amazonaws.com/rapgenius/kanye-west-graduation-album-cover.jpeg" style="width: 300px; height: 300px;"></img></td>-->
-<!--                    <td><img src="https://upload.wikimedia.org/wikipedia/en/4/48/Snoop_Dogg_-_Snoopified._The_Best_Of.jpg" style="width: 300px; height: 300px;"></img></td>-->
-<!--                    <td><img src="http://pitchfork-cdn.s3.amazonaws.com/content/OXYMORON_FRONT_DELUXE.jpg?wmode=transparent" style="width: 300px; height: 300px;"></img></td>-->
-<!--                </tr>-->
-<!--                <tr>-->
-<!--                    <td><img src="https://upload.wikimedia.org/wikipedia/commons/7/72/Nirvana_album_cover.jpg" style="width: 300px; height: 300px;"></img></td>-->
-<!--                    <td><img src="https://theindiegirlsguideto.files.wordpress.com/2009/02/foals-antidotes-cover.jpg" style="width: 300px; height: 300px;"></img></td>-->
-<!--                    <td><img src="https://upload.wikimedia.org/wikipedia/en/3/3b/Dark_Side_of_the_Moon.png" style="width: 300px; height: 300px;"></img></td>-->
-<!--                </tr>-->
             </table>
         </div>
         <hr width="70%">

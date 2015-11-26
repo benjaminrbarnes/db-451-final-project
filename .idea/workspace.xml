@@ -29,13 +29,12 @@
           <file leaf-file-name="home.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/home.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.6409575">
-                  <caret line="91" column="25" selection-start-line="82" selection-start-column="20" selection-end-line="91" selection-end-column="25" />
+                <state vertical-scroll-proportion="0.42154256">
+                  <caret line="60" column="36" selection-start-line="60" selection-start-column="36" selection-end-line="60" selection-end-column="36" />
                   <folding>
-                    <marker date="1448509955000" expanded="true" signature="1613:1651" placeholder="SELECT locat..album_art..." />
-                    <marker date="1448509955000" expanded="true" signature="2503:2531" placeholder="..." />
-                    <marker date="1448509955000" expanded="true" signature="2737:2765" placeholder="..." />
-                    <marker date="1448509955000" expanded="true" signature="3030:3071" placeholder="..." />
+                    <marker date="1448510218000" expanded="true" signature="1613:1651" placeholder="SELECT locat..album_art..." />
+                    <marker date="1448510218000" expanded="true" signature="2282:2310" placeholder="..." />
+                    <marker date="1448510218000" expanded="true" signature="2477:2505" placeholder="..." />
                   </folding>
                 </state>
               </provider>
@@ -251,13 +250,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/home.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6409575">
-          <caret line="91" column="25" selection-start-line="82" selection-start-column="20" selection-end-line="91" selection-end-column="25" />
+        <state vertical-scroll-proportion="0.42154256">
+          <caret line="60" column="36" selection-start-line="60" selection-start-column="36" selection-end-line="60" selection-end-column="36" />
           <folding>
-            <marker date="1448509955000" expanded="true" signature="1613:1651" placeholder="SELECT locat..album_art..." />
-            <marker date="1448509955000" expanded="true" signature="2503:2531" placeholder="..." />
-            <marker date="1448509955000" expanded="true" signature="2737:2765" placeholder="..." />
-            <marker date="1448509955000" expanded="true" signature="3030:3071" placeholder="..." />
+            <marker date="1448510218000" expanded="true" signature="1613:1651" placeholder="SELECT locat..album_art..." />
+            <marker date="1448510218000" expanded="true" signature="2282:2310" placeholder="..." />
+            <marker date="1448510218000" expanded="true" signature="2477:2505" placeholder="..." />
           </folding>
         </state>
       </provider>
