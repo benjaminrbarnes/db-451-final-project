@@ -60,7 +60,7 @@ or die('Error connecting to MySQL server.');
                         echo "</tr>";
                         echo "<tr>";
                     }
-                    echo "<td><img src='$col1' style='width: 300px; height: 300px;'></img></td>";
+                    echo "<td><img src='albums/$col1' style='width: 300px; height: 300px;'></img></td>";
                     $row++;
                 }
                 echo "</tr>";

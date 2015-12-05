@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="04f506dc-40c1-4cd2-8a74-d49e550d7649" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/foals.jpg" afterPath="$PROJECT_DIR$/albums/2.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/kanye.jpg" afterPath="$PROJECT_DIR$/albums/3.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/nirvana.jpg" afterPath="$PROJECT_DIR$/albums/4.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/pink.jpg" afterPath="$PROJECT_DIR$/albums/5.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/q.jpg" afterPath="$PROJECT_DIR$/albums/6.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/snoop.jpg" afterPath="$PROJECT_DIR$/albums/1.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/home.php" afterPath="$PROJECT_DIR$/home.php" />
     </list>
     <ignored path="db-451-final-project.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,12 +29,22 @@
           <file leaf-file-name="home.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/home.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.24202128">
-                  <caret line="46" column="57" selection-start-line="46" selection-start-column="57" selection-end-line="46" selection-end-column="57" />
+                <state vertical-scroll-proportion="0.51861703">
+                  <caret line="62" column="45" selection-start-line="62" selection-start-column="45" selection-end-line="62" selection-end-column="45" />
                   <folding>
-                    <marker date="1449341553000" expanded="true" signature="1580:1624" placeholder="SELECT locat..album_art..." />
-                    <marker date="1449341553000" expanded="true" signature="2193:2221" placeholder="..." />
+                    <marker date="1449343514000" expanded="true" signature="1580:1624" placeholder="SELECT locat..album_art..." />
+                    <marker date="1449343514000" expanded="true" signature="2200:2228" placeholder="..." />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="searchByAlbum.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/searchByAlbum.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-5.625">
+                  <caret line="9" column="7" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -52,8 +56,8 @@
           <file leaf-file-name="findCustManu.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/findCustManu.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.19414894">
-                  <caret line="29" column="18" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="18" />
+                <state vertical-scroll-proportion="0.43351063">
+                  <caret line="41" column="18" selection-start-line="41" selection-start-column="18" selection-end-line="41" selection-end-column="18" />
                   <folding>
                     <marker date="1448483548000" expanded="true" signature="320:705" placeholder="SELECT s.sto..stock..." />
                     <marker date="1448483548000" expanded="true" signature="418:595" placeholder="SELECT i.sto..items..." />
@@ -68,6 +72,13 @@
       </split-second>
     </splitter>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -76,8 +87,9 @@
       <list>
         <option value="$PROJECT_DIR$/findCust.html" />
         <option value="$PROJECT_DIR$/home.html" />
-        <option value="$PROJECT_DIR$/home.php" />
         <option value="$PROJECT_DIR$/connectionData.txt" />
+        <option value="$PROJECT_DIR$/albums/searchByAlbum.html" />
+        <option value="$PROJECT_DIR$/home.php" />
       </list>
     </option>
   </component>
@@ -138,20 +150,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="db-451-final-project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="db-451-final-project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="albums" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -164,9 +162,11 @@
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.HTML" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/albums" />
     </key>
   </component>
@@ -257,8 +257,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="28" column="69" selection-start-line="28" selection-start-column="69" selection-end-line="28" selection-end-column="69" />
           <folding>
-            <marker date="1449341553000" expanded="true" signature="1580:1624" placeholder="SELECT locat..album_art..." />
-            <marker date="1449341553000" expanded="true" signature="2193:2221" placeholder="..." />
+            <marker date="1449343514000" expanded="true" signature="1580:1624" placeholder="SELECT locat..album_art..." />
+            <marker date="1449343514000" expanded="true" signature="2200:2228" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -289,8 +289,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding>
-            <marker date="1449341553000" expanded="true" signature="1580:1624" placeholder="SELECT locat..album_art..." />
-            <marker date="1449341553000" expanded="true" signature="2193:2221" placeholder="..." />
+            <marker date="1449343514000" expanded="true" signature="1580:1624" placeholder="SELECT locat..album_art..." />
+            <marker date="1449343514000" expanded="true" signature="2200:2228" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -320,17 +320,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/home.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24202128">
-          <caret line="46" column="57" selection-start-line="46" selection-start-column="57" selection-end-line="46" selection-end-column="57" />
-          <folding>
-            <marker date="1449341553000" expanded="true" signature="1580:1624" placeholder="SELECT locat..album_art..." />
-            <marker date="1449341553000" expanded="true" signature="2193:2221" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -374,13 +363,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/findCustManu.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19414894">
-          <caret line="29" column="18" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="18" />
+        <state vertical-scroll-proportion="0.43351063">
+          <caret line="41" column="18" selection-start-line="41" selection-start-column="18" selection-end-line="41" selection-end-column="18" />
           <folding>
             <marker date="1448483548000" expanded="true" signature="320:705" placeholder="SELECT s.sto..stock..." />
             <marker date="1448483548000" expanded="true" signature="418:595" placeholder="SELECT i.sto..items..." />
             <marker date="1448483548000" expanded="true" signature="730:1146" placeholder="SELECT s.sto..stock..." />
             <marker date="1448483548000" expanded="true" signature="828:1022" placeholder="SELECT i.sto..items..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/searchByAlbum.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.625">
+          <caret line="9" column="7" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/home.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.51861703">
+          <caret line="62" column="45" selection-start-line="62" selection-start-column="45" selection-end-line="62" selection-end-column="45" />
+          <folding>
+            <marker date="1449343514000" expanded="true" signature="1580:1624" placeholder="SELECT locat..album_art..." />
+            <marker date="1449343514000" expanded="true" signature="2200:2228" placeholder="..." />
           </folding>
         </state>
       </provider>
