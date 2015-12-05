@@ -17,8 +17,6 @@ or die('Error connecting to MySQL server.');
         <h1 align="center">Music Finder</h1>
         <h3 align="center">Your favorite music source</h3>
 
-        <!--<hr width="70%">-->
-
         <div align="center">
             <table cellpadding="10" >
                 <tr>
@@ -46,7 +44,7 @@ or die('Error connecting to MySQL server.');
             <h2>New Releases</h2>
             <table cellpadding="10" >
                 <?php
-                $query = "SELECT location FROM album_art limit 6;";
+                $query = "SELECT Album_artwork_link FROM Album limit 6;";
                 if(!($stmt = mysqli_prepare($conn, $query))){
                     echo "it has failed preparation";
                 };
@@ -62,11 +60,6 @@ or die('Error connecting to MySQL server.');
                         echo "</tr>";
                         echo "<tr>";
                     }
-//                    else if($row == $stmt->num_rows){
-//                        echo "<td><img src='$col1' style='width: 300px; height: 300px;'></img></td>";
-//                        echo "</tr>";
-//                        break;
-//                    }
                     echo "<td><img src='$col1' style='width: 300px; height: 300px;'></img></td>";
                     $row++;
                 }

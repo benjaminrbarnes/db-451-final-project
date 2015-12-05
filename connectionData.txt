@@ -1,7 +1,7 @@
 <?php
 
 $server = "ix.cs.uoregon.edu";
-$dbname ="music";
+$dbname ="music_final";
 $user = "bbarnes";
 $pass = "pass";
 $port="3796";
