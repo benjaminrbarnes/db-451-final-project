@@ -20,14 +20,14 @@ or die('Error connecting to MySQL server.');
         <div align="center">
             <table cellpadding="10" >
                 <tr>
-                    <td align="center"><a href="test.html">Search By Artist</a></td>
-                    <td align="center"><a href="test.html">Search By Track</a></td>
-                    <td align="center"><a href="test.html">Search By Genre</a></td>
+                    <td align="center"><a href="home.php">Search By Artist</a></td>
+                    <td align="center"><a href="home.php">Search By Track</a></td>
+                    <td align="center"><a href="searchByGenre.html">Search By Genre</a></td>
                 </tr>
                 <tr>
                     <td align="center"><a href="searchByAlbum.html">Search By Album</a></td>
-                    <td align="center"><a href="test.html">Find New Playlists</a></td>
-                    <td align="center"><a href="test.html">Find Random Artist</a></td>
+                    <td align="center"><a href="home.php">Find New Playlists</a></td>
+                    <td align="center"><a href="home.php">Find Random Artist</a></td>
                 </tr>
             </table>
         </div>

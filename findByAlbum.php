@@ -16,7 +16,7 @@ or die('Error connecting to MySQL server.');
     <body bgcolor="white">
 
         <div align="center">
-            <table>
+            <table  cellpadding="8">
                 <tr>
                     <td><a href="home.php">Home</a></td>
                     <td><a href="searchByAlbum.html">Search By Album</a></td>
