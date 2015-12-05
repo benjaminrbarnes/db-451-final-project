@@ -61,7 +61,7 @@ or die('Error connecting to MySQL server.');
                         echo "<tr>";
                     }
                     $location = "albums/".$col1;
-                    echo "<td><img src='$location' style='width: 300px; height: 300px;'></img></td>";
+                    echo "<td><img src='albums/$col1' style='width: 300px; height: 300px;'></img></td>";
                     $row++;
                 }
                 echo "</tr>";
