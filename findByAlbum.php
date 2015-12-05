@@ -56,6 +56,7 @@ or die('Error connecting to MySQL server.');
             }
 
             $stmt->bind_result($album_name, $track_name, $length, $genre, $artwork_link, $release_year, $artist, $city);
+            $stmt->store_result();
             echo"<p>num of rows: $stmt->num_rows</p>";
 //            if($stmt->num_rows == 0){
 //                echo "<h2>Sorry, We don't have that album</h2>";
