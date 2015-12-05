@@ -13,10 +13,6 @@ or die('Error connecting to MySQL server.');
     </head>
 
     <body bgcolor="white">
-
-<div>
-
-</div>
         <hr>
 
 
@@ -60,12 +56,17 @@ or die('Error connecting to MySQL server.');
             }
 
             $stmt->bind_result($album_name, $track_name, $length, $genre, $artwork_link, $release_year, $artist, $city);
-            print "<pre>";
-            while($stmt->fetch()){
-                printf("%s %s %s %s %s %s %s %s\n", $album_name, $track_name, $length, $genre, $artwork_link, $release_year, $artist, $city);
+            if($stmt->num_rows == 0){
+                echo "<h2>Sorry, We don't have that album</h2>";
+            }else{
+                print "<pre>";
+                while($stmt->fetch()){
+                    printf("%s %s %s %s %s %s %s %s\n", $album_name, $track_name, $length, $genre, $artwork_link, $release_year, $artist, $city);
+                }
+                $stmt->close();
+                print "</pre>";
             }
-            $stmt->close();
-            print "</pre>";
+
             mysqli_free_result($result);
 
             mysqli_close($conn);
