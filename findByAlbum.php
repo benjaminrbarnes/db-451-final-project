@@ -13,14 +13,13 @@ or die('Error connecting to MySQL server.');
     </head>
 
     <body bgcolor="white">
-        <hr>
 
+        <div align="center">
+            <?php
 
-        <?php
+            $album = $_POST['album'];
 
-        $album = $_POST['album'];
-
-        $query = "SELECT
+            $query = "SELECT
                     r.Album_name,
                     t.Track_name,
                     t.Length,
@@ -38,13 +37,8 @@ or die('Error connecting to MySQL server.');
                     ON t.Album_fk_id = r.Album_id
                 JOIN
                     Artist art
-                    ON r.Artist_artist_id = art.Artist_id;"
-        ?>
-        <p>
-            Result of query:
-        <p>
+                    ON r.Artist_artist_id = art.Artist_id;";
 
-            <?php
             if(!($stmt = mysqli_prepare($conn, $query))){
                 echo "Failed preparation";
             };
@@ -57,17 +51,20 @@ or die('Error connecting to MySQL server.');
 
             $stmt->bind_result($album_name, $track_name, $length, $genre, $artwork_link, $release_year, $artist, $city);
             $stmt->store_result();
-            echo"<p>num of rows: $stmt->num_rows</p>";
-//            if($stmt->num_rows == 0){
-//                echo "<h2>Sorry, We don't have that album</h2>";
-//            }else{
+            if($stmt->num_rows == 0){
+                echo "<h2>Sorry, We don't have that album</h2>";
+            }else{
+                $stmt->fetch();
+                echo "<h2 align='center'>$album_name</h2>";
+                echo "<h3 align='center'>$artist</h3>";
+                echo "<img align='center' src='albums/$artwork_link' style='width: 400px; height: 400px;'></img>";
                 print "<pre>";
-                while($stmt->fetch()){
+                do{
                     printf("%s %s %s %s %s %s %s %s\n", $album_name, $track_name, $length, $genre, $artwork_link, $release_year, $artist, $city);
-                }
+                } while($stmt->fetch());
                 $stmt->close();
                 print "</pre>";
-//            }
+            }
 
             mysqli_free_result($result);
 
@@ -75,13 +72,13 @@ or die('Error connecting to MySQL server.');
 
             ?>
 
-        <p>
-        <hr>
+            <p>
+            <hr>
 
-        <p>
-            <a href="findCustManu.txt" >Contents</a>
-            of the PHP program that created this page.
-
+            <p>
+                <a href="findCustManu.txt" >Contents</a>
+                of the PHP program that created this page.
+        </div>
     </body>
 </html>
 
