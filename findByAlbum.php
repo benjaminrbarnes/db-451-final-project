@@ -15,6 +15,15 @@ or die('Error connecting to MySQL server.');
     <body bgcolor="white">
 
         <div align="center">
+            <table>
+                <tr>
+                    <td><a href="home.php">Home</a></td>
+                    <td><a href="searchByAlbum.html">Search By Album</a></td>
+                </tr>
+            </table>
+        </div>
+        <hr width="30%">
+        <div align="center">
             <?php
 
             $album = $_POST['album'];
