@@ -57,13 +57,22 @@ or die('Error connecting to MySQL server.');
                 $stmt->fetch();
                 echo "<h2 align='center'>$album_name</h2>";
                 echo "<h3 align='center'>$artist</h3>";
-                echo "<img align='center' src='albums/$artwork_link' style='width: 400px; height: 400px;'></img>";
-                print "<pre>";
+                echo "<h4 align='center'>From City: $city</h4>";
+                echo "<h4 align='center'>Album Released: $release_year</h4>";
+                echo "<img align='center' src='albums/$artwork_link' style='width: 500px; height: 500px;'></img>";
+//                print "<pre>";
+                echo "<table cellpadding='2'>";
                 do{
-                    printf("%s %s %s %s %s %s %s %s\n", $album_name, $track_name, $length, $genre, $artwork_link, $release_year, $artist, $city);
+                    echo "<tr>";
+                    echo "<td>$track_name</td>";
+                    echo "<td>$length</td>";
+                    echo "<td>$genre</td>";
+                    echo "</tr>";
+//                    printf("%s %s %s %s %s %s %s %s\n", $album_name, $track_name, $length, $genre, $artwork_link, $release_year, $artist, $city);
                 } while($stmt->fetch());
                 $stmt->close();
-                print "</pre>";
+                echo "</table>";
+//                print "</pre>";
             }
 
             mysqli_free_result($result);
