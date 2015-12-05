@@ -55,11 +55,11 @@
           <file leaf-file-name="findByAlbum.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/findByAlbum.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.7180851">
-                  <caret line="70" column="0" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
+                <state vertical-scroll-proportion="0.49867022">
+                  <caret line="59" column="22" selection-start-line="59" selection-start-column="22" selection-end-line="59" selection-end-column="22" />
                   <folding>
-                    <marker date="1449347546000" expanded="true" signature="349:970" placeholder="SELECT r.Alb..Track..." />
-                    <marker date="1449347546000" expanded="true" signature="724:807" placeholder="SELECT * FRO..Album..." />
+                    <marker date="1449347699000" expanded="true" signature="349:970" placeholder="SELECT r.Alb..Track..." />
+                    <marker date="1449347699000" expanded="true" signature="724:807" placeholder="SELECT * FRO..Album..." />
                   </folding>
                 </state>
               </provider>
@@ -430,11 +430,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/findByAlbum.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7180851">
-          <caret line="70" column="0" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.49867022">
+          <caret line="59" column="22" selection-start-line="59" selection-start-column="22" selection-end-line="59" selection-end-column="22" />
           <folding>
-            <marker date="1449347546000" expanded="true" signature="349:970" placeholder="SELECT r.Alb..Track..." />
-            <marker date="1449347546000" expanded="true" signature="724:807" placeholder="SELECT * FRO..Album..." />
+            <marker date="1449347699000" expanded="true" signature="349:970" placeholder="SELECT r.Alb..Track..." />
+            <marker date="1449347699000" expanded="true" signature="724:807" placeholder="SELECT * FRO..Album..." />
           </folding>
         </state>
       </provider>
