@@ -1,10 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
     <head>
         <meta charset="UTF-8">
-        <title>Title</title>
+        <title>Search By Album</title>
     </head>
-    <body>
-        
+
+    <body bgcolor="white">
+
+        <h3 align="center">Search By Album</h3>
+        <div align="center">
+            <hr width="10%">
+
+            <p>
+                Please enter an album name ("Graduation", "Illmatic", "1999", etc).
+            <p>
+
+            <form action="findByAlbum.php" method="POST">
+
+                <input type="text" name="album"> <br>
+                <input type="submit" value="submit">
+                <input type="reset" value="erase">
+            </form>
+
+            <!--<hr width="10%">-->
+
+            <!--<p>-->
+                <!--<a href="findCust.txt" >Contents</a>-->
+                <!--of this page.-->
+
+            <!--<p>-->
+                <!--<a href="findCustManu.txt" >Contents</a>-->
+                <!--of the PHP page that gets called.-->
+                <!--(And the <a href="connectionData.txt" >connection data</a>,-->
+                <!--kept separately for security reasons.)-->
+        </div>
+
     </body>
 </html>

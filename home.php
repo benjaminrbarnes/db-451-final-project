@@ -25,17 +25,11 @@ or die('Error connecting to MySQL server.');
                     <td align="center"><a href="test.html">Search By Genre</a></td>
                 </tr>
                 <tr>
-                    <td align="center"><a href="test.html">Search By Album</a></td>
+                    <td align="center"><a href="searchByAlbum.html">Search By Album</a></td>
                     <td align="center"><a href="test.html">Find New Playlists</a></td>
                     <td align="center"><a href="test.html">Find Random Artist</a></td>
                 </tr>
             </table>
-            <!--<p> Please enter a manufacturer ("Anza", "Hero", etc). <p>-->
-            <!--<form action="findCustManu.php" method="POST">-->
-                <!--<input type="text" name="state"> <br>-->
-                <!--<input type="submit" value="submit">-->
-                <!--<input type="reset" value="erase">-->
-            <!--</form>-->
         </div>
 
         <hr width="10%">
@@ -60,7 +54,6 @@ or die('Error connecting to MySQL server.');
                         echo "</tr>";
                         echo "<tr>";
                     }
-                    $location = "albums/".$col1;
                     echo "<td><img src='albums/$col1' style='width: 300px; height: 300px;'></img></td>";
                     $row++;
                 }

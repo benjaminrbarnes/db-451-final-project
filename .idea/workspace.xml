@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="04f506dc-40c1-4cd2-8a74-d49e550d7649" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/home.php" afterPath="$PROJECT_DIR$/home.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/searchByAlbum.html" afterPath="$PROJECT_DIR$/searchByAlbum.html" />
     </list>
     <ignored path="db-451-final-project.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,17 +27,17 @@
     <splitter split-orientation="horizontal" split-proportion="0.6530291">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="home.php" pinned="false" current-in-tab="true">
+          <file leaf-file-name="home.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/home.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.51861703">
-                  <caret line="62" column="47" selection-start-line="62" selection-start-column="47" selection-end-line="62" selection-end-column="47" />
+                <state vertical-scroll-proportion="-26.25">
+                  <caret line="43" column="18" selection-start-line="43" selection-start-column="18" selection-end-line="43" selection-end-column="18" />
                   <folding>
-                    <marker date="1449343911000" expanded="true" signature="1580:1624" placeholder="SELECT locat..album_art..." />
-                    <marker date="1449343911000" expanded="true" signature="2249:2277" placeholder="..." />
-                    <marker date="1449343911000" expanded="true" signature="2590:2879" placeholder="..." />
-                    <marker date="1449343911000" expanded="true" signature="2659:2672" placeholder="..." />
-                    <marker date="1449343911000" expanded="true" signature="2675:2864" placeholder="..." />
+                    <marker date="1449344248000" expanded="true" signature="1239:1283" placeholder="SELECT locat..album_art..." />
+                    <marker date="1449344248000" expanded="true" signature="1859:1887" placeholder="..." />
+                    <marker date="1449344248000" expanded="true" signature="2200:2489" placeholder="..." />
+                    <marker date="1449344248000" expanded="true" signature="2269:2282" placeholder="..." />
+                    <marker date="1449344248000" expanded="true" signature="2285:2474" placeholder="..." />
                   </folding>
                 </state>
               </provider>
@@ -45,9 +46,22 @@
           <file leaf-file-name="searchByAlbum.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/searchByAlbum.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-5.625">
-                  <caret line="9" column="7" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
+                <state vertical-scroll-proportion="-14.375">
+                  <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
                   <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="findByAlbum.php" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/findByAlbum.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.6981383">
+                  <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+                  <folding>
+                    <marker date="1449347153000" expanded="true" signature="364:985" placeholder="SELECT r.Alb..Track..." />
+                    <marker date="1449347153000" expanded="true" signature="739:822" placeholder="SELECT * FRO..Album..." />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -59,8 +73,8 @@
           <file leaf-file-name="findCustManu.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/findCustManu.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.43351063">
-                  <caret line="41" column="18" selection-start-line="41" selection-start-column="18" selection-end-line="41" selection-end-column="18" />
+                <state vertical-scroll-proportion="0.3337766">
+                  <caret line="36" column="18" selection-start-line="0" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
                   <folding>
                     <marker date="1448483548000" expanded="true" signature="320:705" placeholder="SELECT s.sto..stock..." />
                     <marker date="1448483548000" expanded="true" signature="418:595" placeholder="SELECT i.sto..items..." />
@@ -93,6 +107,8 @@
         <option value="$PROJECT_DIR$/connectionData.txt" />
         <option value="$PROJECT_DIR$/albums/searchByAlbum.html" />
         <option value="$PROJECT_DIR$/home.php" />
+        <option value="$PROJECT_DIR$/searchByAlbum.html" />
+        <option value="$PROJECT_DIR$/findByAlbum.php" />
       </list>
     </option>
   </component>
@@ -260,11 +276,11 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="28" column="69" selection-start-line="28" selection-start-column="69" selection-end-line="28" selection-end-column="69" />
           <folding>
-            <marker date="1449343911000" expanded="true" signature="1580:1624" placeholder="SELECT locat..album_art..." />
-            <marker date="1449343911000" expanded="true" signature="2249:2277" placeholder="..." />
-            <marker date="1449343911000" expanded="true" signature="2590:2879" placeholder="..." />
-            <marker date="1449343911000" expanded="true" signature="2659:2672" placeholder="..." />
-            <marker date="1449343911000" expanded="true" signature="2675:2864" placeholder="..." />
+            <marker date="1449344248000" expanded="true" signature="1239:1283" placeholder="SELECT locat..album_art..." />
+            <marker date="1449344248000" expanded="true" signature="1859:1887" placeholder="..." />
+            <marker date="1449344248000" expanded="true" signature="2200:2489" placeholder="..." />
+            <marker date="1449344248000" expanded="true" signature="2269:2282" placeholder="..." />
+            <marker date="1449344248000" expanded="true" signature="2285:2474" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -295,11 +311,11 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding>
-            <marker date="1449343911000" expanded="true" signature="1580:1624" placeholder="SELECT locat..album_art..." />
-            <marker date="1449343911000" expanded="true" signature="2249:2277" placeholder="..." />
-            <marker date="1449343911000" expanded="true" signature="2590:2879" placeholder="..." />
-            <marker date="1449343911000" expanded="true" signature="2659:2672" placeholder="..." />
-            <marker date="1449343911000" expanded="true" signature="2675:2864" placeholder="..." />
+            <marker date="1449344248000" expanded="true" signature="1239:1283" placeholder="SELECT locat..album_art..." />
+            <marker date="1449344248000" expanded="true" signature="1859:1887" placeholder="..." />
+            <marker date="1449344248000" expanded="true" signature="2200:2489" placeholder="..." />
+            <marker date="1449344248000" expanded="true" signature="2269:2282" placeholder="..." />
+            <marker date="1449344248000" expanded="true" signature="2285:2474" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -370,10 +386,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/findCust.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/home.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-26.25">
+          <caret line="43" column="18" selection-start-line="43" selection-start-column="18" selection-end-line="43" selection-end-column="18" />
+          <folding>
+            <marker date="1449344248000" expanded="true" signature="1239:1283" placeholder="SELECT locat..album_art..." />
+            <marker date="1449344248000" expanded="true" signature="1859:1887" placeholder="..." />
+            <marker date="1449344248000" expanded="true" signature="2200:2489" placeholder="..." />
+            <marker date="1449344248000" expanded="true" signature="2269:2282" placeholder="..." />
+            <marker date="1449344248000" expanded="true" signature="2285:2474" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/searchByAlbum.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.375">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/findCustManu.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43351063">
-          <caret line="41" column="18" selection-start-line="41" selection-start-column="18" selection-end-line="41" selection-end-column="18" />
+        <state vertical-scroll-proportion="0.3337766">
+          <caret line="36" column="18" selection-start-line="0" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
           <folding>
             <marker date="1448483548000" expanded="true" signature="320:705" placeholder="SELECT s.sto..stock..." />
             <marker date="1448483548000" expanded="true" signature="418:595" placeholder="SELECT i.sto..items..." />
@@ -383,24 +429,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/searchByAlbum.html">
+    <entry file="file://$PROJECT_DIR$/findByAlbum.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.625">
-          <caret line="9" column="7" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/home.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.51861703">
-          <caret line="62" column="47" selection-start-line="62" selection-start-column="47" selection-end-line="62" selection-end-column="47" />
+        <state vertical-scroll-proportion="0.6981383">
+          <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
           <folding>
-            <marker date="1449343911000" expanded="true" signature="1580:1624" placeholder="SELECT locat..album_art..." />
-            <marker date="1449343911000" expanded="true" signature="2249:2277" placeholder="..." />
-            <marker date="1449343911000" expanded="true" signature="2590:2879" placeholder="..." />
-            <marker date="1449343911000" expanded="true" signature="2659:2672" placeholder="..." />
-            <marker date="1449343911000" expanded="true" signature="2675:2864" placeholder="..." />
+            <marker date="1449347153000" expanded="true" signature="364:985" placeholder="SELECT r.Alb..Track..." />
+            <marker date="1449347153000" expanded="true" signature="739:822" placeholder="SELECT * FRO..Album..." />
           </folding>
         </state>
       </provider>
