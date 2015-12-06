@@ -7,10 +7,9 @@ $conn = mysqli_connect($server, $user, $pass, $dbname, $port)
 or die('Error connecting to MySQL server.');
 
 ?>
-<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">-->
 <html>
     <head>
-        <title>Search By Genre</title>
+        <title>Search By Record Label</title>
     </head>
 
     <body bgcolor="white">
@@ -33,64 +32,56 @@ or die('Error connecting to MySQL server.');
             <?php
             /* we first check to see if there is a get in the url
             and if not, see if there is a post. */
-            if($_GET['genre'] == ""){
-                $genre = $_POST['genre'];
+            if($_GET['label'] == ""){
+                $label = $_POST['label'];
             } else {
-                $genre = $_GET['genre'];
+                $label = $_GET['label'];
             }
 
             $query =
                 "SELECT
-                    t.Track_name,
-                    t.Length,
-                    t.Genre,
-                    a.Album_name,
-                    a.Album_release_year,
-                    art.Artist_name
+                    art.Artist_name,
+                    art.City,
+                    rc.Company_name,
+                    co.owner_name
                 FROM
-                    Track t
-                JOIN
-                    Album a
-                    ON t.Album_fk_id = a.Album_id
-                JOIN
                     Artist art
-                    ON a.Artist_artist_id = art.Artist_id
+                JOIN
+                    Record_Company rc
+                    ON rc.RC_id = art.Record_Company_RC_id
+                JOIN
+                    Company_Owner co
+                    ON co.owner_id = rc.Company_Owner_owner_id
                 WHERE
-                    t.Genre =? ;";
+                    rc.Company_name =? ;";
 
             if(!($stmt = mysqli_prepare($conn, $query))){
                 echo "Failed preparation";
             };
-            if(!$stmt->bind_param("s", $genre)){
+            if(!$stmt->bind_param("s", $label)){
                 echo "Failed to bind params";
             };
             if(!$stmt->execute()){
                 echo "Execution failed";
             }
 
-            $stmt->bind_result($track_name, $length, $gen, $album, $release_year, $artist);
+            $stmt->bind_result($artist_name, $artist_city, $record_company, $owner_name);
             $stmt->store_result();
             if($stmt->num_rows == 0){
-                echo "<h2>Sorry, We don't have any songs in that genre</h2>";
+                echo "<h2>Sorry, We don't have any artists under that Record Label</h2>";
             }else{
                 $stmt->fetch();
-                echo "<h2 align='center'>Genre: $gen</h2>";
-                echo "<table cellpadding='4'>";
-                /* Header for table */
-                echo "<tr>
-                        <td><b>Track Name</b></td>
+                echo "<h2 align='center'>Artists under $record_company</h2>
+                      <h3 align='center'>Record Label owned by $owner_name</h3>";
+                echo "<table cellpadding='4'>
+                      <tr>
                         <td><b>Artist</b></td>
-                        <td><b>Album</b></td>
-                        <td><b>Length</b></td>
-                        <td><b>Release Year</b></td>
+                        <td><b>City</b></td>
                       </tr>";
                 do{
                     echo "<tr>
-                            <td>$track_name</td>
-                            <td><a href='findByArtist.php?artist=$artist'>$artist</a></td>
-                            <td><a href='findByAlbum.php?album=$album'>$album</a></td>
-                            <td>$length</td>
-                            <td>$release_year</td>
+                            <td><a href='findByArtist.php?artist=$artist_name'>$artist_name</a></td>
+                            <td><a href='findByCity.php?artist=$artist_city'>$artist_city</a></td>
                          </tr>";
                 } while($stmt->fetch());
                 $stmt->close();

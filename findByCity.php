@@ -24,6 +24,7 @@ or die('Error connecting to MySQL server.');
                     <td><a href="searchByCity.html">Search By City</a></td>
                     <td><a href="searchByArtist.html">Search By Artist</a></td>
                     <td><a href="searchByUser.html">Search By User</a></td>
+                    <td><a href="searchByRecordLabel.html">Search By Record Label</a></td>
                 </tr>
             </table>
         </div>

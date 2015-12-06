@@ -3,7 +3,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Search By City</title>
+        <title>Search By Record Label</title>
     </head>
 
     <body bgcolor="white">
@@ -22,14 +22,14 @@
             </table>
         </div>
         <hr width="30%">
-        <h3 align="center">Search By City</h3>
+        <h3 align="center">Search By Record Label</h3>
         <div align="center">
-            <p>Please enter an City name.</p>
-            <p><b>Cities:</b> New York City, Seattle, Los Angeles, London, ShyTown</p>
+            <p>Please enter the name of a Record Label to find signed artists</p>
+            <p><b>Record Labels: </b>Sony Records, Columbia Records, Universal Music Group, Barnes Record Corp, Warner Music Group</p>
 
-            <form action="findByCity.php" method="POST">
+            <form action="findByRecordLabel.php" method="POST">
 
-                <input type="text" name="city"> <br>
+                <input type="text" name="label"> <br>
                 <input type="submit" value="submit">
                 <input type="reset" value="erase">
             </form>
