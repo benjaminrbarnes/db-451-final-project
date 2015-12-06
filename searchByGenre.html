@@ -13,34 +13,23 @@
                 <tr>
                     <td padding><a href="home.php">Home</a></td>
                     <td><a href="searchByAlbum.html">Search By Album</a></td>
+                    <td><a href="searchByGenre.html">Search By Genre</a></td>
                 </tr>
             </table>
         </div>
         <hr width="30%">
-        <h3 align="center">Search By Album</h3>
+        <h3 align="center">Search By Genre</h3>
         <div align="center">
             <p>
-                Please enter an album name ("Graduation", "Illmatic", "1999", etc).
+                Please enter an genre type ("Hip-Hop", "Rap", "Classical", etc).
             <p>
 
-            <form action="findByAlbum.php" method="POST">
+            <form action="findByGenre.php" method="POST">
 
-                <input type="text" name="album"> <br>
+                <input type="text" name="genre"> <br>
                 <input type="submit" value="submit">
                 <input type="reset" value="erase">
             </form>
-
-            <!--<hr width="10%">-->
-
-            <!--<p>-->
-            <!--<a href="findCust.txt" >Contents</a>-->
-            <!--of this page.-->
-
-            <!--<p>-->
-            <!--<a href="findCustManu.txt" >Contents</a>-->
-            <!--of the PHP page that gets called.-->
-            <!--(And the <a href="connectionData.txt" >connection data</a>,-->
-            <!--kept separately for security reasons.)-->
         </div>
 
     </body>

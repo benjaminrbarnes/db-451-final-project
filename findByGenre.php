@@ -10,7 +10,7 @@ or die('Error connecting to MySQL server.');
 <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">-->
 <html>
     <head>
-        <title>Search By Album</title>
+        <title>Search By Genre</title>
     </head>
 
     <body bgcolor="white">
@@ -28,58 +28,62 @@ or die('Error connecting to MySQL server.');
         <div align="center">
             <?php
 
-            $album = $_POST['album'];
+            $genre = $_POST['genre'];
 
-            $query = "SELECT
-                    r.Album_name,
+            $query =
+                "SELECT
                     t.Track_name,
                     t.Length,
                     t.Genre,
-                    r.Album_artwork_link,
-                    r.Album_release_year,
-                    art.Artist_name,
-                    art.City
+                    a.Album_name,
+                    a.Album_release_year,
+                    art.Artist_name
                 FROM
                     Track t
                 JOIN
-                    (SELECT *
-                    FROM Album a
-                    WHERE a.Album_name =?) r
-                    ON t.Album_fk_id = r.Album_id
+                    Album a
+                    ON t.Album_fk_id = a.Album_id
                 JOIN
                     Artist art
-                    ON r.Artist_artist_id = art.Artist_id;";
+                    ON a.Artist_artist_id = art.Artist_id
+                WHERE
+                    t.Genre =? ;";
 
             if(!($stmt = mysqli_prepare($conn, $query))){
                 echo "Failed preparation";
             };
-            if(!$stmt->bind_param("s", $album)){
+            if(!$stmt->bind_param("s", $genre)){
                 echo "Failed to bind params";
             };
             if(!$stmt->execute()){
                 echo "Execution failed";
             }
 
-            $stmt->bind_result($album_name, $track_name, $length, $genre, $artwork_link, $release_year, $artist, $city);
+            $stmt->bind_result($track_name, $length, $gen, $album, $release_year, $artist);
             $stmt->store_result();
             if($stmt->num_rows == 0){
-                echo "<h2>Sorry, We don't have that album</h2>";
+                echo "<h2>Sorry, We don't have any songs in that genre</h2>";
             }else{
                 $stmt->fetch();
-                echo "<h2 align='center'>$album_name</h2>";
-                echo "<h3 align='center'>$artist</h3>";
-                echo "<h4 align='center'>From City: $city</h4>";
-                echo "<h4 align='center'>Album Released: $release_year</h4>";
-                echo "<img align='center' src='albums/$artwork_link' style='width: 300px; height: 300px;'></img>";
-
-                echo "<h3>Track List</h3>";
+                echo "<h2 align='center'>$gen</h2>";
+                echo "<h3>Tracks</h3>";
                 echo "<table cellpadding='4'>";
+                /* Header for table */
+                echo "<tr>
+                        <td><b>Track Name</b></td>
+                        <td><b>Artist</b></td>
+                        <td><b>Album</b></td>
+                        <td><b>Length</b></td>
+                        <td><b>Release Year</b></td>
+                      </tr>";
                 do{
-                    echo "<tr>";
-                    echo "<td>$track_name</td>";
-                    echo "<td>$length</td>";
-                    echo "<td>$genre</td>";
-                    echo "</tr>";
+                    echo "<tr>
+                            <td>$track_name</td>
+                            <td>$artist</td>
+                            <td>$album</td>
+                            <td>$length</td>
+                            <td>$release_year</td>
+                         </tr>";
                 } while($stmt->fetch());
                 $stmt->close();
                 echo "</table>";
@@ -90,13 +94,6 @@ or die('Error connecting to MySQL server.');
             mysqli_close($conn);
 
             ?>
-
-            <p>
-<!--            <hr>-->
-<!---->
-<!--            <p>-->
-<!--                <a href="findCustManu.txt" >Contents</a>-->
-<!--                of the PHP program that created this page.-->
         </div>
     </body>
 </html>
