@@ -46,7 +46,7 @@ or die('Error connecting to MySQL server.');
                     echo "execution failed";
                 }
 
-                $stmt->bind_result($col1);
+                $stmt->bind_result($album);
                 $row = 0;
                 echo "<tr>";
                 while($stmt->fetch()){
@@ -54,7 +54,7 @@ or die('Error connecting to MySQL server.');
                         echo "</tr>";
                         echo "<tr>";
                     }
-                    echo "<td><img src='albums/$col1' style='width: 300px; height: 300px;'></img></td>";
+                    echo "<td><a href='findByAlbum.php?album=$album'><img hre src='albums/$album' style='width: 300px; height: 300px;'></img></a></td>";
                     $row++;
                 }
                 echo "</tr>";
