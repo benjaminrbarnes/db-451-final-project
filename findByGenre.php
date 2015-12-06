@@ -29,7 +29,7 @@ or die('Error connecting to MySQL server.');
             <?php
             /* we first check to see if there is a get in the url
             and if not, see if there is a post. */
-            if($_GET['album'] == ""){
+            if($_GET['genre'] == ""){
                 $genre = $_POST['genre'];
             } else {
                 $genre = $_GET['genre'];
