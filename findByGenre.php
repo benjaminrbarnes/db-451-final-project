@@ -27,8 +27,13 @@ or die('Error connecting to MySQL server.');
         <hr width="30%">
         <div align="center">
             <?php
-
-            $genre = $_POST['genre'];
+            /* we first check to see if there is a get in the url
+            and if not, see if there is a post. */
+            if($_GET['album'] == ""){
+                $genre = $_POST['genre'];
+            } else {
+                $genre = $_GET['genre'];
+            }
 
             $query =
                 "SELECT

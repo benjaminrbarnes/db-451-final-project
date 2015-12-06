@@ -27,6 +27,8 @@ or die('Error connecting to MySQL server.');
         <hr width="30%">
         <div align="center">
             <?php
+            /* we first check to see if there is a get in the url
+            and if not, see if there is a post. */
             if($_GET['album'] == ""){
                 $album = $_POST['album'];
             } else {
@@ -69,20 +71,21 @@ or die('Error connecting to MySQL server.');
                 echo "<h2>Sorry, We don't have that album</h2>";
             }else{
                 $stmt->fetch();
-                echo "<h2 align='center'>$album_name</h2>";
-                echo "<h3 align='center'>$artist</h3>";
-                echo "<h4 align='center'>From City: $city</h4>";
-                echo "<h4 align='center'>Album Released: $release_year</h4>";
-                echo "<img align='center' src='albums/$artwork_link' style='width: 300px; height: 300px;'></img>";
+                echo "
+                    <h2 align='center'>$album_name</h2>
+                    <h3 align='center'>$artist</h3>
+                    <h4 align='center'>From City: $city</h4>
+                    <h4 align='center'>Album Released: $release_year</h4>
+                    <img align='center' src='albums/$artwork_link' style='width: 300px; height: 300px;'></img>
 
-                echo "<h3>Track List</h3>";
-                echo "<table cellpadding='4'>";
+                    <h3>Track List</h3>
+                    <table cellpadding='4'>";
                 do{
-                    echo "<tr>";
-                    echo "<td>$track_name</td>";
-                    echo "<td>$length</td>";
-                    echo "<td>$genre</td>";
-                    echo "</tr>";
+                    echo "<tr>
+                            <td>$track_name</td>
+                            <td>$length</td>
+                            <td><a href='findByGenre.php?genre=$genre'>$genre</a></td>
+                          </tr>";
                 } while($stmt->fetch());
                 $stmt->close();
                 echo "</table>";
@@ -93,13 +96,6 @@ or die('Error connecting to MySQL server.');
             mysqli_close($conn);
 
             ?>
-
-            <p>
-<!--            <hr>-->
-<!---->
-<!--            <p>-->
-<!--                <a href="findCustManu.txt" >Contents</a>-->
-<!--                of the PHP program that created this page.-->
         </div>
     </body>
 </html>

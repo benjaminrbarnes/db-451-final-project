@@ -38,7 +38,7 @@ or die('Error connecting to MySQL server.');
             <h2>New Releases</h2>
             <table cellpadding="10" >
                 <?php
-                $query = "SELECT Album_artwork_link, Album_name FROM Album limit 6;";
+                $query = "SELECT Album_artwork_link, Album_name FROM Album limit 9;";
                 if(!($stmt = mysqli_prepare($conn, $query))){
                     echo "it has failed preparation";
                 };
@@ -64,12 +64,12 @@ or die('Error connecting to MySQL server.');
                 ?>
             </table>
         </div>
-        <hr width="70%">
-        <div align="center">
-            <p><a href="findCust.txt" >Contents</a> of this page.<p>
-            <p><a href="findCustManu.txt" >Contents</a> of the PHP page that gets called. (And the
-            <a href="connectionData.txt" >connection data</a>, kept separately for security reasons.)</p>
-        </div>
+<!--        <hr width="70%">-->
+<!--        <div align="center">-->
+<!--            <p><a href="findCust.txt" >Contents</a> of this page.<p>-->
+<!--            <p><a href="findCustManu.txt" >Contents</a> of the PHP page that gets called. (And the-->
+<!--            <a href="connectionData.txt" >connection data</a>, kept separately for security reasons.)</p>-->
+<!--        </div>-->
 
     </body>
 </html>
