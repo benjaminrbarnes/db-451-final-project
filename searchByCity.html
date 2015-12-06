@@ -3,7 +3,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Search By Album</title>
+        <title>Search By City</title>
     </head>
 
     <body bgcolor="white">
@@ -19,30 +19,17 @@
             </table>
         </div>
         <hr width="30%">
-        <h3 align="center">Search By Album</h3>
+        <h3 align="center">Search By City</h3>
         <div align="center">
-            <p>
-                Please enter an album name ("Graduation", "Illmatic", "1999", etc).
-            <p>
+            <p>Please enter an City name.</p>
+            <p><b>Cities:</b> New York City, Seattle, Los Angeles, London, ShyTown</p>
 
-            <form action="findByAlbum.php" method="POST">
+            <form action="findByCity.php" method="POST">
 
-                <input type="text" name="album"> <br>
+                <input type="text" name="city"> <br>
                 <input type="submit" value="submit">
                 <input type="reset" value="erase">
             </form>
-
-            <!--<hr width="10%">-->
-
-            <!--<p>-->
-                <!--<a href="findCust.txt" >Contents</a>-->
-                <!--of this page.-->
-
-            <!--<p>-->
-                <!--<a href="findCustManu.txt" >Contents</a>-->
-                <!--of the PHP page that gets called.-->
-                <!--(And the <a href="connectionData.txt" >connection data</a>,-->
-                <!--kept separately for security reasons.)-->
         </div>
 
     </body>
