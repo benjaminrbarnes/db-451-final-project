@@ -74,22 +74,26 @@ or die('Error connecting to MySQL server.');
                 echo "<h2>Sorry, We don't have any Artists with that name</h2>";
             }else{
                 $stmt->fetch();
-                echo "<h2 align='center'>Artist: $artist_name</h2>
-                      <h3 align='center'>From: $city</h3>
-                      <table cellpadding='4'>";
+                echo    "<h2 align='center'>Artist: $artist_name</h2>
+                        <h3 align='center'>From: $city</h3>
+                        <table>
+                            <tr></tr>
+                        </table>";
+
                 /* Header for table */
-                echo "<tr>
-                        <td><b>Track Name</b></td>
-                        <td><b>Length</b></td>
-                        <td><b>Genre</b></td>
-                        <td><b>Album</b></td>
-                        <td><b>Release Year</b></td>
-                      </tr>";
+                echo "<table cellpadding='4'>
+                          <tr>
+                            <td><b>Track Name</b></td>
+                            <td><b>Length</b></td>
+                            <td><b>Genre</b></td>
+                            <td><b>Album</b></td>
+                            <td><b>Release Year</b></td>
+                          </tr>";
                 do{
                     echo "<tr>
                             <td>$track_name</td>
                             <td>$length</td>
-                            <td>$genre</td>
+                            <td><a href='findByGenre.php?genre=$genre'>$genre</a></td>
                             <td><a href='findByAlbum.php?album=$album_name'>$album_name</a></td>
                             <td>$release_year</td>
                          </tr>";

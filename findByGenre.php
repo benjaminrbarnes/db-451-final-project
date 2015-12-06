@@ -22,6 +22,7 @@ or die('Error connecting to MySQL server.');
                     <td><a href="searchByAlbum.html">Search By Album</a></td>
                     <td><a href="searchByGenre.html">Search By Genre</a></td>
                     <td><a href="searchByCity.html">Search By City</a></td>
+                    <td><a href="searchByArtist.html">Search By Artist</a></td>
                 </tr>
             </table>
         </div>
@@ -84,7 +85,7 @@ or die('Error connecting to MySQL server.');
                 do{
                     echo "<tr>
                             <td>$track_name</td>
-                            <td>$artist</td>
+                            <td><a href='findByArtist.php?artist=$artist'>$artist</a></td>
                             <td><a href='findByAlbum.php?album=$album'>$album</a></td>
                             <td>$length</td>
                             <td>$release_year</td>
