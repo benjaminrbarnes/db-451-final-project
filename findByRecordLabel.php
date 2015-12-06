@@ -87,11 +87,7 @@ or die('Error connecting to MySQL server.');
                 $stmt->close();
                 echo "</table>";
             }
-
-            mysqli_free_result($result);
-
             mysqli_close($conn);
-
             ?>
         </div>
     </body>

@@ -59,7 +59,6 @@ or die('Error connecting to MySQL server.');
                 }
                 echo "</tr>";
                 $stmt->close();
-                mysqli_free_result($result);
                 mysqli_close($conn);
                 ?>
             </table>
