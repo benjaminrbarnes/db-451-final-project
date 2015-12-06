@@ -80,7 +80,7 @@ or die('Error connecting to MySQL server.');
             $stmt->bind_result($track_name, $album_name, $artist_name, $length, $genre, $playlist_name, $user);
             $stmt->store_result();
             if($stmt->num_rows == 0){
-                echo "<h2>Sorry, This user hasn't liked any songs and has no playlists.</h2>";
+                echo "<h2>Sorry, this user either doesn't exist or hasn't liked any songs and has no playlists.</h2>";
             }else{
                 $stmt->fetch();
                 echo    "<h2 align='center'>$user's liked songs and playlists</h2>";
