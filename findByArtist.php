@@ -68,13 +68,13 @@ or die('Error connecting to MySQL server.');
                 echo "Execution failed";
             }
 
-            $stmt->bind_result($track_name, $length, $gen, $album_name, $album_link, $release_year, $artist_name, $city);
+            $stmt->bind_result($track_name, $length, $genre, $album_name, $album_link, $release_year, $artist_name, $city);
             $stmt->store_result();
             if($stmt->num_rows == 0){
                 echo "<h2>Sorry, We don't have any Artists with that name</h2>";
             }else{
                 $stmt->fetch();
-                echo "<h2 align='center'>Artist: $gen</h2>
+                echo "<h2 align='center'>Artist: $artist_name</h2>
                       <h3 align='center'>From: $city</h3>
                       <table cellpadding='4'>";
                 /* Header for table */
@@ -90,7 +90,7 @@ or die('Error connecting to MySQL server.');
                             <td>$track_name</td>
                             <td>$length</td>
                             <td>$genre</td>
-                            <td><a href='findByAlbum.php?album=$album'>$album</a></td>
+                            <td><a href='findByAlbum.php?album=$album_name'>$album_name</a></td>
                             <td>$release_year</td>
                          </tr>";
                 } while($stmt->fetch());
