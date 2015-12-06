@@ -3,7 +3,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Search By Album</title>
+        <title>Search By User</title>
     </head>
 
     <body bgcolor="white">
@@ -21,18 +21,19 @@
             </table>
         </div>
         <hr width="30%">
-        <h3 align="center">Search By Album</h3>
+        <h3 align="center">Search By User</h3>
         <div align="center">
-            <p>
-                Please enter an album name ("Graduation", "Illmatic", "1999", etc).
-            <p>
+            <p>Please enter the name of a user. This will return the songs
+            that they have liked and added to playlists</p>
+            <p><b>Current Users: </b>seangrady, benbarnes, chriswilson</p>
 
-            <form action="findByAlbum.php" method="POST">
+            <form action="findLikePlaylist.php" method="POST">
 
-                <input type="text" name="album"> <br>
+                <input type="text" name="username"> <br>
                 <input type="submit" value="submit">
                 <input type="reset" value="erase">
             </form>
         </div>
+
     </body>
 </html>

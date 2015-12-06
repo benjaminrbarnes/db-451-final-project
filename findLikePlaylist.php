@@ -10,7 +10,7 @@ or die('Error connecting to MySQL server.');
 <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">-->
 <html>
     <head>
-        <title>Search By Album</title>
+        <title>Search By Artist</title>
     </head>
 
     <body bgcolor="white">
@@ -32,63 +32,65 @@ or die('Error connecting to MySQL server.');
             <?php
             /* we first check to see if there is a get in the url
             and if not, see if there is a post. */
-            if($_GET['album'] == ""){
-                $album = $_POST['album'];
+            if($_GET['username'] == ""){
+                $username = $_POST['username'];
             } else {
-                $album = $_GET['album'];
+                $username = $_GET['username'];
             }
 
-            $query = "SELECT
-                    r.Album_name,
-                    t.Track_name,
-                    t.Length,
-                    t.Genre,
-                    r.Album_artwork_link,
-                    r.Album_release_year,
-                    art.Artist_name,
-                    art.City
+            $query =
+                "SELECT
+                    track.Track_name,
+                    track.Length,
+                    track.Genre,
+                    lp.name AS playlist_name,
+                    u.name AS user
                 FROM
-                    Track t
+                    Track track
                 JOIN
-                    (SELECT *
-                    FROM Album a
-                    WHERE a.Album_name =?) r
-                    ON t.Album_fk_id = r.Album_id
+                    track_on_Like_Playlist t
+                    ON track.Track_id = t.Track_track_id
                 JOIN
-                    Artist art
-                    ON r.Artist_artist_id = art.Artist_id;";
+                    Like_Playlist lp
+                    ON t.Like_Playlist_playlist_id = lp.Playlist_id
+                JOIN
+                    User u
+                    ON lp.User_user_id = u.User_id
+                WHERE
+                    u.name =? ;";
 
             if(!($stmt = mysqli_prepare($conn, $query))){
                 echo "Failed preparation";
             };
-            if(!$stmt->bind_param("s", $album)){
+            if(!$stmt->bind_param("s", $username)){
                 echo "Failed to bind params";
             };
             if(!$stmt->execute()){
                 echo "Execution failed";
             }
 
-            $stmt->bind_result($album_name, $track_name, $length, $genre, $artwork_link, $release_year, $artist, $city);
+            $stmt->bind_result($track_name, $length, $genre, $playlist_name, $user);
             $stmt->store_result();
             if($stmt->num_rows == 0){
-                echo "<h2>Sorry, We don't have that album</h2>";
+                echo "<h2>Sorry, This user hasn't liked any songs and has no playlists.</h2>";
             }else{
                 $stmt->fetch();
-                echo "
-                    <h2 align='center'>$album_name</h2>
-                    <h3 align='center'>$artist</h3>
-                    <h4 align='center'>City: $city</h4>
-                    <h4 align='center'>Album Released: $release_year</h4>
-                    <img align='center' src='albums/$artwork_link' style='width: 300px; height: 300px;'></img>
-
-                    <h3>Track List</h3>
-                    <table cellpadding='4'>";
+                echo    "<h2 align='center'>$user's liked songs and playlists</h2>";
+                /* Header for table */
+                echo "<table cellpadding='4'>
+                          <tr>
+                            <td><b>Track Name</b></td>
+                            <td><b>Length</b></td>
+                            <td><b>Genre</b></td>
+                            <td><b>Playlist Name</b></td>
+                          </tr>";
                 do{
                     echo "<tr>
                             <td>$track_name</td>
                             <td>$length</td>
                             <td><a href='findByGenre.php?genre=$genre'>$genre</a></td>
-                          </tr>";
+                            <td>$playlist_name</td>
+                         </tr>";
                 } while($stmt->fetch());
                 $stmt->close();
                 echo "</table>";

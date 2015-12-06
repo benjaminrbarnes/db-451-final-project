@@ -23,6 +23,7 @@ or die('Error connecting to MySQL server.');
                     <td><a href="searchByGenre.html">Search By Genre</a></td>
                     <td><a href="searchByCity.html">Search By City</a></td>
                     <td><a href="searchByArtist.html">Search By Artist</a></td>
+                    <td><a href="searchByUser.html">Search By User</a></td>
                 </tr>
             </table>
         </div>
@@ -75,10 +76,7 @@ or die('Error connecting to MySQL server.');
             }else{
                 $stmt->fetch();
                 echo    "<h2 align='center'>Artist: $artist_name</h2>
-                        <h3 align='center'>From: $city</h3>
-                        <table>
-                            <tr></tr>
-                        </table>";
+                        <h3 align='center'>From: $city</h3>";
 
                 /* Header for table */
                 echo "<table cellpadding='4'>
