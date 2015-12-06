@@ -38,11 +38,13 @@ or die('Error connecting to MySQL server.');
             }
 
             $query =
-                "select *
-                from Track t
-                join Album a on t.Album_fk_id = a.Album_id
-                join Artist art on a.Artist_artist_id = art.Artist_id
-                Where art.City = \"ShyTown\";";
+                "SELECT
+                    a.Artist_name,
+                    a.City
+                FROM
+                    Artist a
+                WHERE
+                    a.City =? ;";
 
             if(!($stmt = mysqli_prepare($conn, $query))){
                 echo "Failed preparation";
@@ -54,29 +56,17 @@ or die('Error connecting to MySQL server.');
                 echo "Execution failed";
             }
 
-            $stmt->bind_result($track_name, $length, $gen, $album, $release_year, $artist);
+            $stmt->bind_result($artist_name, $artist_city);
             $stmt->store_result();
             if($stmt->num_rows == 0){
-                echo "<h2>Sorry, We don't have any songs in that genre</h2>";
+                echo "<h2>Sorry, We don't have any artists from that city</h2>";
             }else{
                 $stmt->fetch();
-                echo "<h2 align='center'>Genre: $gen</h2>";
+                echo "<h2 align='center'>Artists from $artist_city</h2>";
                 echo "<table cellpadding='4'>";
-                /* Header for table */
-                echo "<tr>
-                        <td><b>Track Name</b></td>
-                        <td><b>Artist</b></td>
-                        <td><b>Album</b></td>
-                        <td><b>Length</b></td>
-                        <td><b>Release Year</b></td>
-                      </tr>";
                 do{
                     echo "<tr>
-                            <td>$track_name</td>
-                            <td>$artist</td>
-                            <td><a href='findByAlbum.php?album=$album'>$album</a></td>
-                            <td>$length</td>
-                            <td>$release_year</td>
+                            <td><a href='findByArtist.php?artist=$artist_name'>$artist_name</a></td>
                          </tr>";
                 } while($stmt->fetch());
                 $stmt->close();
