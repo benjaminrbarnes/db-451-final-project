@@ -18,7 +18,7 @@ or die('Error connecting to MySQL server.');
         <div align="center">
             <table cellpadding="8">
                 <tr>
-                    <td padding><a href="home.php">Home</a></td>
+                    <td><a href="home.php">Home</a></td>
                     <td><a href="searchByAlbum.html">Search By Album</a></td>
                     <td><a href="searchByGenre.html">Search By Genre</a></td>
                 </tr>
@@ -27,7 +27,8 @@ or die('Error connecting to MySQL server.');
         <hr width="30%">
         <div align="center">
             <?php
-
+            echo "next is the get:";
+            echo $_GET['album'];
             $album = $_POST['album'];
 
             $query = "SELECT

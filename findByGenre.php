@@ -18,7 +18,7 @@ or die('Error connecting to MySQL server.');
         <div align="center">
             <table cellpadding="8">
                 <tr>
-                    <td padding><a href="home.php">Home</a></td>
+                    <td><a href="home.php">Home</a></td>
                     <td><a href="searchByAlbum.html">Search By Album</a></td>
                     <td><a href="searchByGenre.html">Search By Genre</a></td>
                 </tr>
@@ -65,8 +65,7 @@ or die('Error connecting to MySQL server.');
                 echo "<h2>Sorry, We don't have any songs in that genre</h2>";
             }else{
                 $stmt->fetch();
-                echo "<h2 align='center'>$gen</h2>";
-                echo "<h3>Tracks</h3>";
+                echo "<h2 align='center'>Genre: $gen</h2>";
                 echo "<table cellpadding='4'>";
                 /* Header for table */
                 echo "<tr>
@@ -80,7 +79,7 @@ or die('Error connecting to MySQL server.');
                     echo "<tr>
                             <td>$track_name</td>
                             <td>$artist</td>
-                            <td>$album</td>
+                            <td><a href='findByAlbum.php/album=hello'>$album</a></td>
                             <td>$length</td>
                             <td>$release_year</td>
                          </tr>";
