@@ -41,12 +41,20 @@ or die('Error connecting to MySQL server.');
             $query =
                 "SELECT
                     track.Track_name,
+                    album.Album_name,
+                    artist.Artist_name,
                     track.Length,
                     track.Genre,
                     lp.name AS playlist_name,
                     u.name AS user
                 FROM
                     Track track
+                JOIN
+                    Album album
+                    ON album.Album_id = track.Album_fk_id
+                JOIN
+                    Artist artist
+                    ON artist.Artist_id = album.Artist_artist_id
                 JOIN
                     track_on_Like_Playlist t
                     ON track.Track_id = t.Track_track_id
@@ -69,7 +77,7 @@ or die('Error connecting to MySQL server.');
                 echo "Execution failed";
             }
 
-            $stmt->bind_result($track_name, $length, $genre, $playlist_name, $user);
+            $stmt->bind_result($track_name, $album_name, $artist_name, $length, $genre, $playlist_name, $user);
             $stmt->store_result();
             if($stmt->num_rows == 0){
                 echo "<h2>Sorry, This user hasn't liked any songs and has no playlists.</h2>";
@@ -80,6 +88,8 @@ or die('Error connecting to MySQL server.');
                 echo "<table cellpadding='4'>
                           <tr>
                             <td><b>Track Name</b></td>
+                            <td><b>Album Name</b></td>
+                            <td><b>Artist Name</b></td>
                             <td><b>Length</b></td>
                             <td><b>Genre</b></td>
                             <td><b>Playlist Name</b></td>
@@ -87,6 +97,8 @@ or die('Error connecting to MySQL server.');
                 do{
                     echo "<tr>
                             <td>$track_name</td>
+                            <td><a href='findByAlbum.php?album=$album_name'>$album_name</a></td>
+                            <td><a href='findByArtist.php?artist=$artist_name'>$artist_name</a></td>
                             <td>$length</td>
                             <td><a href='findByGenre.php?genre=$genre'>$genre</a></td>
                             <td>$playlist_name</td>
