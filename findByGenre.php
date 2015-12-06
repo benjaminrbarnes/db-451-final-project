@@ -79,7 +79,7 @@ or die('Error connecting to MySQL server.');
                     echo "<tr>
                             <td>$track_name</td>
                             <td>$artist</td>
-                            <td><a href='findByAlbum.php/album=hello'>$album</a></td>
+                            <td><a href='findByAlbum.php?album=$album'>$album</a></td>
                             <td>$length</td>
                             <td>$release_year</td>
                          </tr>";

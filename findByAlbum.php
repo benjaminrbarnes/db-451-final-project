@@ -27,9 +27,11 @@ or die('Error connecting to MySQL server.');
         <hr width="30%">
         <div align="center">
             <?php
-            echo "next is the get:";
-            echo $_GET['album'];
-            $album = $_POST['album'];
+            if($_GET['album'] == ""){
+                $album = $_POST['album'];
+            } else {
+                $album = $_GET['album'];
+            }
 
             $query = "SELECT
                     r.Album_name,
