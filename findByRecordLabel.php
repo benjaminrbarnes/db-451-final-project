@@ -81,7 +81,7 @@ or die('Error connecting to MySQL server.');
                 do{
                     echo "<tr>
                             <td><a href='findByArtist.php?artist=$artist_name'>$artist_name</a></td>
-                            <td><a href='findByCity.php?artist=$artist_city'>$artist_city</a></td>
+                            <td><a href='findByCity.php?city=$artist_city'>$artist_city</a></td>
                          </tr>";
                 } while($stmt->fetch());
                 $stmt->close();
