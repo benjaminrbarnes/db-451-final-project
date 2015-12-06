@@ -27,7 +27,7 @@ or die('Error connecting to MySQL server.');
                 <tr>
                     <td align="center"><a href="searchByAlbum.html">Search By Album</a></td>
                     <td align="center"><a href="searchByCity.html">Search By City</a></td>
-                    <td align="center"><a href="searchByRecordLabel.php">Search By Record Label</a></td>
+                    <td align="center"><a href="searchByRecordLabel.html">Search By Record Label</a></td>
                 </tr>
             </table>
         </div>
