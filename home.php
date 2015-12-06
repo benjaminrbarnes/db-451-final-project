@@ -38,7 +38,7 @@ or die('Error connecting to MySQL server.');
             <h2>New Releases</h2>
             <table cellpadding="10" >
                 <?php
-                $query = "SELECT Album_artwork_link FROM Album limit 6;";
+                $query = "SELECT Album_artwork_link, Album_name FROM Album limit 6;";
                 if(!($stmt = mysqli_prepare($conn, $query))){
                     echo "it has failed preparation";
                 };
@@ -46,7 +46,7 @@ or die('Error connecting to MySQL server.');
                     echo "execution failed";
                 }
 
-                $stmt->bind_result($album);
+                $stmt->bind_result($album, $album_name);
                 $row = 0;
                 echo "<tr>";
                 while($stmt->fetch()){
@@ -54,7 +54,7 @@ or die('Error connecting to MySQL server.');
                         echo "</tr>";
                         echo "<tr>";
                     }
-                    echo "<td><a href='findByAlbum.php?album=$album'><img hre src='albums/$album' style='width: 300px; height: 300px;'></img></a></td>";
+                    echo "<td><a href='findByAlbum.php?album=$album_name'><img hre src='albums/$album' style='width: 300px; height: 300px;'></img></a></td>";
                     $row++;
                 }
                 echo "</tr>";
